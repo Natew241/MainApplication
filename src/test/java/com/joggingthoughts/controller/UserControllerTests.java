@@ -2,6 +2,7 @@ package com.joggingthoughts.controller;
 
 import com.joggingthoughts.entity.UserEntity;
 import com.joggingthoughts.service.UserService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,21 +29,25 @@ public class UserControllerTests {
     @MockBean
     private UserService userService;
 
-    @Test
-    public void testGetAllUsers() throws Exception{
+    @BeforeEach
+    public void setUp(){
         List<UserEntity> users = Arrays.asList(
                 new UserEntity("Jane Doe", "example@contesto.com"),
                 new UserEntity("John Doe", "johndoe@example.com")
         );
 
         Mockito.when(userService.getAllUsers()).thenReturn(users);
+    }
+
+    @Test
+    public void testGetAllUsers() throws Exception{
 
         mockMvc.perform(get("/api/users")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].username", is("Jane Doe")))
-                .andExpect(jsonPath("$[1].username", is("John Doe")));
+                .andExpect(jsonPath("$[0].name", is("Jane Doe")))
+                .andExpect(jsonPath("$[1].name", is("John Doe")));
 
     }
 
