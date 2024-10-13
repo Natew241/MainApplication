@@ -1,6 +1,6 @@
 package com.joggingthoughts.controller;
 
-import com.joggingthoughts.entity.UserEntity;
+import com.joggingthoughts.domain.UserEntity;
 import com.joggingthoughts.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

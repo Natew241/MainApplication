@@ -1,6 +1,6 @@
 package com.joggingthoughts.controller;
 
-import com.joggingthoughts.entity.UserEntity;
+import com.joggingthoughts.domain.UserEntity;
 import com.joggingthoughts.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -50,6 +50,4 @@ public class UserControllerTests {
                 .andExpect(jsonPath("$[1].name", is("John Doe")));
 
     }
-
-
 }

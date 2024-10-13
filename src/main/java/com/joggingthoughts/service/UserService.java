@@ -1,8 +1,7 @@
 package com.joggingthoughts.service;
 
-import com.joggingthoughts.entity.UserEntity;
+import com.joggingthoughts.domain.UserEntity;
 import com.joggingthoughts.repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

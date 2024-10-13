@@ -1,6 +1,6 @@
 package com.joggingthoughts.repository;
 
-import com.joggingthoughts.entity.UserEntity;
+import com.joggingthoughts.domain.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
